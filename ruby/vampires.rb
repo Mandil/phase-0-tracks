@@ -1,3 +1,6 @@
+def allergies(allergy)
+  allergy == "sunshine"
+end
 
 puts "How many employees will be processed?"
 n = gets.chomp.to_i
@@ -25,9 +28,20 @@ until n == 0
   puts "Would you like to enroll in the company’s health insurance?"
   insurance = gets.chomp[0] == 'y'
   
+  allergy = nil 
+  sunshine = false
+
+  while !sunshine and allergy != 'done'
+    puts "Name any allergies you have?"
+    allergy = gets.chomp
+    sunshine = allergies(allergy)
+  end
   
   if name == 'Drake Cula' || name == 'Tu Fang'
   	results = 'Definitely a vampire.'
+    
+    elsif sunshine && !(!age && !like_garlic && !insurance)
+    	results = 'Probably a vampire.'
     
     elsif age && like_garlic && insurance
     	results = 'Results inconclusive.'
