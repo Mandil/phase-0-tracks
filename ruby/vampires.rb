@@ -62,4 +62,4 @@ until n == 0
   n -= 1 
 end
 
-put "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
