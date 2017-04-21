@@ -1,27 +1,89 @@
+html {
+	background-image: url("https://s3.amazonaws.com/f.cl.ly/items/3a2h193d3W3O0L3g2U43/octocat_darkwood.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+}
+
 
 
 body {
-  font-family: Helvetica;
+	padding: 20px 30px;
+	border-radius: 15px;
+	background-color: rgba(251, 252, 244, 0.85);
+	margin: 30px auto;
+	max-width: 960px;
+	color: #323B3C;
+	font-family: 'PT Sans';
+	font-size: 18px;
 }
-para {}
-h1 {
-  text-align: center;
+
+h1 {  
+	color: #323B3C;
+	font-family: 'PT Sans Narrow';
+	font-size: 60px;
+	font-weight: 400;
+	line-height: 60px;
+	letter-spacing: 5px;
+	margin-bottom: 48px;
+	text-transform: uppercase;
+	width: 96.1%;
+	padding: 20px;
+	background-image: url("https://developer.github.com/assets/images/hero-circuit-bg.svg");
+
+}
+
+footer {
+	background-color: rgba(206, 206, 206, 0.75);
+	padding: 20px;
+	margin-top: 20px;
+	width: 96.1%;
+	text-align: center;
+	font-size: .8em;
+	border-radius: 7.5px;
+
 }
 
 header p {
-  padding: 2em;
+	background-color: rgba(206, 206, 206, 0.75);
+	padding: 20px;
+	width: 96.1%;
+	font-size: 1.2em;
+	border-radius: 7.5px;
+
+
 }
 
-.column-1, .column-2 {
-  background-color: gray;
-  border: 1px solid black;
-  font-size: .8em;
-  padding: 10px;
-  margin: 10px;
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
-  border-radius: 5px;
-  height: 150vh;
-  overflow: auto;
+.column-1 {
+	background-color: rgba(206, 206, 206, 0.75);
+	font-size: .8em;
+	padding: 20px;
+	margin: auto;
+	display: inline-block;
+	vertical-align: top;
+	width: 44%;
+	border-radius: 5px;
+	height: auto;
       }
+
+
+.column-2 {
+	background-color: rgba(206, 206, 206, 0.75);
+	font-size: .8em;
+	padding: 20px;
+	float: right;
+	margin: auto;
+	display: inline-block;
+	vertical-align: top;
+	width: 44%;
+	border-radius: 5px;
+	height: auto;
+      }
+
+a {
+	color: #63B2BB;	
+}
+
+a:hover {
+	color: #323B3C;
+}
