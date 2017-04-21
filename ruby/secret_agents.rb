@@ -43,6 +43,13 @@ def decrypt(name)
 name
 end
 
+puts encrypt("abc") #should return "bcd"
+puts encrypt("zed") #should return "afe"
+puts decrypt("bcd") #should return "abc"
+puts decrypt("afe") #should return "zed"
+
+
+puts decrypt(encrypt('swordfish')) #Add a note in the comments of your code explaining it to any future agents.
 
 
 
