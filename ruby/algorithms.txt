@@ -1,0 +1,34 @@
+if you want to go to another floor:
+
+	search for the elevator sign that should be hanged somewhere in the corridors around you until you find it
+
+	once you find it follow the signs until you reach to the elevator door
+
+	decide which floor you want to go and check what floor you’re in
+		if (the floor you want to go) > (than the floor you’re in)
+			then click up
+			otherwise if (the floor you want to go) < (than the floor you’re in)
+				then click down
+
+	once the elevator doors open and the elevator is going towards the floor you’re going to
+		go inside the elevator and look for a keyboard consist of characters, each character represent a floor in the building
+		click the button represent the floor that you are going to
+		wait until the floor announcement screen show the character represent your floor
+			once you're there exit the elevator after doors open 
+
+congratulation you're at the required floor
+
+
+
+-----------
+
+
+Ordering home delivery pizza
+
+Check the updated menu online until you chose your favorite pizza
+Call the pizza place
+	if they didn’t answer wait for 5 minutes then call back
+Once they answered tell them your order and your membership number for the delivery address
+Wait until the pizza delivery guy knock on your door
+	Once pizza delivery guy arrives, give him $5 tip and get the pizza from him
+Congratulation you got you’re pizza
