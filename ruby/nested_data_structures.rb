@@ -1,3 +1,4 @@
+# mandilco is a company that has few departments, vehicles and machines, here is its nested data:
 mandilco = {
   departments: {
     hr: { employees: 4,
