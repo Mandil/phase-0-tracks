@@ -23,13 +23,25 @@ p colors
 
 
 # Added a method that iterates through the items, deleting any that meet a certain condition
-colors.delete_if {|color| color == 'red' || color == 'yellow'}
-av_tempreture.delete_if {|month, temp| temp <= 65 }  
-p colors
-p av_tempreture
+p colors.delete_if {|color| color == 'red' || color == 'yellow'}
+p av_tempreture.delete_if {|month, temp| temp <= 65 }  
+
 
 # A method that filters a data structure for only items that do satisfy a certain condition
+p colors.keep_if {| color | color != 'black' }
+
+p av_tempreture.keep_if {|month, temp| temp > 68} 
+
+# A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+
 p colors.select {| color | color == "green" }
 
 p av_tempreture.select {|month, temp| month == :Aug} 
+
+# Add a method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
+
+p colors.drop_while {| color | color != "green" }
+
+p av_tempreture.drop_while {|month, temp| month != :Aug} 
+
 
