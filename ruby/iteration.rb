@@ -19,8 +19,11 @@ av_tempreture.map do |month, temp|
 		puts "#{month} average tempreture is above 70" 
 	end
 end
-
-
 p colors
 
 
+# Added a method that iterates through the items, deleting any that meet a certain condition
+colors.delete_if {|color| color == 'red' || color == 'yellow'}
+av_tempreture.delete_if {|month, temp| temp <= 65 }  
+p colors
+p av_tempreture
