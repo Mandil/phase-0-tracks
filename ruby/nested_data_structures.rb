@@ -4,9 +4,9 @@ mandilco = {
 		      desks: 3,
 			    computers: 4
         },
-    finance: {  employees: 8,
+    finance: {  employees: 3,
 			          desks: 3,
-			          computers: 7
+			          computers: 4
               }
   },
   vehicles: {
@@ -28,4 +28,28 @@ mandilco = {
     'machine3']
 }
 
-puts mandilco
+puts 'The content of the finance department is:'
+p mandilco[:departments][:finance]
+
+puts 'The type of veh2 is:'
+p mandilco[:vehicles][:veh2][:type]
+
+puts 'The second machine in the machine department is:'
+p mandilco[:machines][1]
+
+mandilco[:machines].push("machine4")
+puts 'Adding machine4 to the machine department:'
+p mandilco[:machines]
+
+mandilco[:departments][:operations] = {  employees: 8, desks: 3, computers: 7}
+puts 'Adding operations department including its own hash...'
+p mandilco[:departments][:operations]
+
+mandilco[:vehicles][:veh1][:type] = 'sedan'
+puts 'Changing veh1 type'
+p mandilco[:vehicles][:veh1][:type]
+
+mandilco[:vehicles].delete(:veh2)
+puts 'Removing veh1'
+p mandilco[:vehicles]
+
