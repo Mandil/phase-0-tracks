@@ -28,13 +28,31 @@ def secret_agent (arr) #This method take array as an input and produce a new arr
 end
 
 # getting the secret agent name so we can encrypt it
-puts 'Whats your name?'
+secret_agent_fake = []
+secret_agent_real = []
+puts 'Hi!'
+result = nil
+loop do
+	puts 'Whats your name? or type quit to quit'
+	result = gets.chomp
+	if result == 'quit'
+		break
+	end
 
-fullname = gets.chomp.downcase.split(' ') # converting the full name to 2 parts, first and last name, also downcase all letter to not have an issue when we compare
+	fullname = result.downcase.split(' ') # converting the full name to 2 parts, first and last name, also downcase all letter to not have an issue when we compare
 
-fullname = [secret_agent(fullname[1].split('')) , secret_agent(fullname[0].split(''))] # calling the method for the secret agent after swapping first and last name and converting each to array
+	fullname = [secret_agent(fullname[1].split('')) , secret_agent(fullname[0].split(''))] # calling the method for the secret agent after swapping first and last name and converting each to array
 
+	secret_agent_fake << result
+	secret_agent_real << (fullname.join(' '))
 
-puts fullname.join(' ') # "Felicia Torres" will become "Vussit Gimodoe" ---> confirmed
+	puts fullname.join(' ') # "Felicia Torres" will become "Vussit Gimodoe" ---> confirmed
+end
+
+index = 0
+while index < secret_agent_fake.length
+	puts "#{secret_agent_real[index]} is actually #{secret_agent_fake[index]}"
+	index += 1
+end
 
 
