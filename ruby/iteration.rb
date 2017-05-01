@@ -27,3 +27,9 @@ colors.delete_if {|color| color == 'red' || color == 'yellow'}
 av_tempreture.delete_if {|month, temp| temp <= 65 }  
 p colors
 p av_tempreture
+
+# A method that filters a data structure for only items that do satisfy a certain condition
+p colors.select {| color | color == "green" }
+
+p av_tempreture.select {|month, temp| month == :Aug} 
+
