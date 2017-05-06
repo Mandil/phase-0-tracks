@@ -24,6 +24,12 @@ class Puppy
 		puts "Bow-wow!"
 	end
 
+	# Add a method to your Puppy class named initialize. It should print "Initializing new puppy instance ..."
+	def initialize
+		puts "Initializing new puppy instance ..."
+	end
+
+
 end
 
 
@@ -34,7 +40,10 @@ Puppy.new.speak(99)
 
 Puppy.new.roll_over
 
-Puppy.new.dog_years(34)
+p Puppy.new.dog_years(34)
 
 Puppy.new.jump
+
+
+# Without changing your driver code, run the program. Does initialize run? When?
 
