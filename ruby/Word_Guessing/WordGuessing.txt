@@ -1,0 +1,18 @@
+Pseudocode:
+
+Ask user1 for the word
+Maximum trails allowed is the length of the word * 2
+Set result to ‘- - - - -‘ ( ‘-‘ same number of letters the word has)
+loop till trails = 0
+	Ask user2 to guess a letter
+	Trails - 1
+	If letter is included in the word
+		check in which position/s
+		reveal the letter in the same position/s in your result
+	If letter not included 
+		ask to try again
+	If trails = 0
+		end the program and print ‘game over’
+	If all ‘-‘ converts to letters
+		end the program and print ‘you won’
+End loop
