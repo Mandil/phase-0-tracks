@@ -10,23 +10,25 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+# intilizing three variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# to call the 2 private methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      number_of_deaths = (@population * 0.4).floor 
     elsif @population_density >= 150
       number_of_deaths = (@population * 0.3).floor
     elsif @population_density >= 100
@@ -41,7 +43,7 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -81,6 +83,9 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+STATE_DATA.each { |state, info_hash| VirusPredictor.new(state, info_hash[:population_density], info_hash[:population]).virus_effects }
+
 
 
 #=======================================================================
