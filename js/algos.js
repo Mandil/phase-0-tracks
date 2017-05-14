@@ -14,3 +14,11 @@ function longestPhrase(array){
 var array = ["long phrase","longest phrase","longer phrase"];
 	
 console.log(longestPhrase(array));
+
+var colors = ['blue', 'red', 'raspberry', 'yellow'];
+
+console.log(longestPhrase(colors));
+
+var horse_names = ['Ed', 'raspberry', 'runner', 'sea biscuit'];
+
+console.log(longestPhrase(horse_names));
