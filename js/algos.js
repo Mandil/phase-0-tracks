@@ -22,6 +22,23 @@ function isSimilar(hash1,hash2) {
 		return similar;
 	}
 
+//	wordsGenerator function will take an integer as an input and genreate as many 
+// 	random words as the value of the intiger, each random word has random length (
+//	from 1 to 10) and random letters
+function wordsGenerator(integer) {
+	words = [];
+	chars = 'abcdefghijklmnopqrstuvwxyz'
+	for (i=0 ; i < integer ; i++) {
+		var result = '';
+		var length = Math.floor((Math.random() * 10) + 1);
+    for (var j = length; j > 0; --j) { 
+    	result += chars[Math.floor(Math.random() * chars.length)];}
+    words.push(result);
+		
+	}
+	return words
+}
+
 //// Driver code \\\\
 // longest phrase 
 
@@ -45,7 +62,6 @@ var Object2 = {name: "Tamir", age: 54};
 var Object3 = {animal: "Dog", legs: 4};
 var Object4 = {animal: "Dog", legs: 3};
 
-
 console.log('Is', Object1 , 'similar to' , Object2 , '?');
 console.log(isSimilar(Object1,Object2));
 
@@ -57,3 +73,9 @@ console.log(isSimilar(Object2,Object4));
 
 console.log('Is' , Object3 , 'similar to' , Object4 , '?');
 console.log(isSimilar(Object3,Object4));
+
+
+// words generator
+
+console.log(wordsGenerator(3))
+
