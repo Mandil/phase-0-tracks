@@ -31,8 +31,9 @@ function wordsGenerator(integer) {
 	for (i=0 ; i < integer ; i++) {
 		var result = '';
 		var length = Math.floor((Math.random() * 10) + 1);
-    for (var j = length; j > 0; --j) { 
-    	result += chars[Math.floor(Math.random() * chars.length)];}
+	    for (var j = length; j > 0; --j) { 
+	    	result += chars[Math.floor(Math.random() * chars.length)];
+	    }
     words.push(result);
 		
 	}
@@ -75,7 +76,14 @@ console.log('Is' , Object3 , 'similar to' , Object4 , '?');
 console.log(isSimilar(Object3,Object4));
 
 
-// words generator
-
+// words generator Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+//Math.floor(Math.random() * (max - min)) + min
 console.log(wordsGenerator(3))
+
+for (var x = 0; x < 10; x++) {
+	arrayLength = Math.floor(Math.random() * 5) + 2;  // randomly selecting array length from 2 to 10
+	checkArray = wordsGenerator(arrayLength);
+	console.log(checkArray);
+	console.log('Longest phrase is: ' , longestPhrase(checkArray));
+}
 
