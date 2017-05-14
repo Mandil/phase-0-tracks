@@ -6,7 +6,19 @@
 # EXPLANATION OF require_relative
 #
 #
-require_relative 'state_data'
+#require_relative 'state_data'
+require './state_data.rb'
+
+=begin
+  
+ require_relative and require tells the program that this file is required here, its 
+ like we copy and paste the code of state_data.rb in the beginning of the driver code here
+
+ there is no diffrent in the function but there is a differnt with the file location
+ we used here  require './state_data.rb' instead of require_relative 'state_data' to test 
+ it and it worked as expected
+  
+=end
 
 class VirusPredictor
 
