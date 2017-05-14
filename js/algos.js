@@ -8,22 +8,25 @@ function longestPhrase(array){
 		}
 		return phrase
 	}
+
+// 	isSimilar function will chech 2 hashs and will return true if any 
+//	key-value pair in the 2 hashes are the same
 function isSimilar(hash1,hash2) {
 	var similar = false;
 	for (var key1 in hash1) {
-			for (var key2 in hash2) {
-				if ((key1 === key2) && (hash1[key1] === hash2[key2])) {
-					similar = true;}
+		for (var key2 in hash2) {
+			if ((key1 === key2) && (hash1[key1] === hash2[key2])) {
+				similar = true;}
 			}
+		}
+		return similar;
 	}
-	return similar;
-}
 
 //// Driver code \\\\
 // longest phrase 
 
 var array = ["long phrase","longest phrase","longer phrase"];
-	
+
 console.log(longestPhrase(array));
 
 var colors = ['blue', 'red', 'raspberry', 'yellow'];
@@ -49,9 +52,8 @@ console.log(isSimilar(Object1,Object2));
 console.log('Is' , Object3 , 'similar to' , Object2 , '?');
 console.log(isSimilar(Object3,Object2));
 
-console.log('Is' , Object2 , 'similar to ' , Object4 , '?');
+console.log('Is' , Object2 , 'similar to' , Object4 , '?');
 console.log(isSimilar(Object2,Object4));
 
 console.log('Is' , Object3 , 'similar to' , Object4 , '?');
 console.log(isSimilar(Object3,Object4));
-
