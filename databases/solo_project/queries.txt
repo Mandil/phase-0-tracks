@@ -1,0 +1,62 @@
+Display the information in one table (either table is fine):
+
+sqlite> SELECT * FROM VehiclesStock;
+1|X3|9|TRUE|2
+2|X5|6|TRUE|1
+3|3 Series|11|TRUE|1
+4|6 Series|3|TRUE|1
+5|5 Series|2|FALSE|1
+6|X6|11|FALSE|2
+
+—————————————————————————————————————————————————————————
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+//One 3 Series have been sold, so need to reduce Qty by 1:
+
+sqlite> UPDATE VehiclesStock SET Qty=10 WHERE Model='3 Series';
+sqlite> SELECT * FROM VehiclesStock;
+1|X3|9|TRUE|2
+2|X5|6|TRUE|1
+3|3 Series|10|TRUE|1
+4|6 Series|3|TRUE|1
+5|5 Series|2|FALSE|1
+6|X6|11|FALSE|2
+
+—————————————————————————————————————————————————————————
+
+
+Display the information in both tables using one query.
+
+sqlite> select VehiclesStock.ID, VehiclesStock.Model, VehiclesStock.Auto_Transmission, ClassID.CarClass FROM VehiclesStock, ClassID WHERE VehiclesStock.ClassID=ClassID.ID;
+1|X3|TRUE|SUV
+2|X5|TRUE|Sedan
+3|3 Series|TRUE|Sedan
+4|6 Series|TRUE|Sedan
+5|5 Series|FALSE|Sedan
+6|X6|FALSE|SUV
+
+—————————————————————————————————————————————————————————
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> select VehiclesStock.Model, ClassID.CarClass, VehiclesStock.Qty FROM VehiclesStock, ClassID WHERE VehiclesStock.ClassID=ClassID.ID;
+X3|SUV|9
+X5|Sedan|6
+3 Series|Sedan|10
+6 Series|Sedan|3
+5 Series|Sedan|2
+X6|SUV|11
+
+—————————————————————————————————————————————————————————
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+//'5 Series' pulled by manufacturer//
+sqlite> delete from VehiclesStock where Model='5 Series'; sqlite> select * from VehiclesStock JOIN ClassID on VehiclesStock.ClassID=ClassID.ID;
+1|X3|9|TRUE|2|2|SUV
+2|X5|6|TRUE|1|1|Sedan
+3|3 Series|10|TRUE|1|1|Sedan
+4|6 Series|3|TRUE|1|1|Sedan
+6|X6|11|FALSE|2|2|SUV
+
