@@ -1,0 +1,31 @@
+
+You've joined two tables before. How do you join three?
+
+sqlite> SELECT * FROM businesses, users, reviews WHERE reviews.user_id= users.id AND reviews.business_id=businesses.id;
+2|PCC Natural Markets|3|Angela|Jolie|1|4|very good experience!|2|3
+3|Prost! West Seattle|2|Mandy|Kaling|2|3|expensive|3|2
+1|Blackboard Bistro|2|Mandy|Kaling|3|4|fresh, will come again for sure|1|2
+4|Westcity Sardine Kitchen|1|Bradford|Pitt|4|5|highly recommended...|4|1
+3|Prost! West Seattle|1|Bradford|Pitt|5|5|great sandwiches :) |3|1
+5|The Swinery|3|Angela|Jolie|6|4|not easy to get parking here|5|3
+
+——————————————————————————
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+sqlite> SELECT reviews.id, businesses.name, reviews.stars, reviews.comment, users.FirstName, users.LastName FROM businesses, users, reviews WHERE reviews.user_id= users.id AND reviews.business_id=businesses.id; 
+1|PCC Natural Markets|4|very good experience!|Angela|Jolie
+2|Prost! West Seattle|3|expensive|Mandy|Kaling
+3|Blackboard Bistro|4|fresh, will come again for sure|Mandy|Kaling
+4|Westcity Sardine Kitchen|5|highly recommended...|Bradford|Pitt
+5|Prost! West Seattle|5|great sandwiches :) |Bradford|Pitt
+6|The Swinery|4|not easy to get parking here|Angela|Jolie
+
+——————————————————————————
+
+How do you view the data of all three tables for just one particular business? 
+
+sqlite> SELECT businesses.name, reviews.stars, reviews.comment, users.FirstName, users.LastName FROM businesses, users, reviews WHERE reviews.user_id= users.id AND reviews.business_id=businesses.id AND businesses.name='Prost! West Seattle';
+Prost! West Seattle|3|expensive|Mandy|Kaling
+Prost! West Seattle|5|great sandwiches :) |Bradford|Pitt
+
