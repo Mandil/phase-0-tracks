@@ -17,11 +17,22 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/search' do
+  erb :lookup_student
+end
+
+
 # create new students via
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
 end
+
+post '/search' do
+  db.execute("SELECT * FROM students WHERE id=?", [params['ID'].to_i])
+
+end
+
 
 # add static resources
